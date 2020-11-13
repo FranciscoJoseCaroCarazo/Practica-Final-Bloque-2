@@ -9,16 +9,30 @@
 
 const users = [];
 
+//Clase User
 class User {
-  constructor(name, money, showMeTheMoney){
+  constructor(name, money, any) {
     this.name = name;
     this.money = money;
-    this.showMeTheMoney = showMeTheMoney;
+    this.showMeTheMoney = any;
   }
 }
 
-fetch('./users.json')
+//Hacemos el fetch que meterá los usuarios en la lista de usuarios.
+fetch("./users.json")
   .then(response => response.json())
   .then(data => {
-    
+    let newUsers = data;
+    newUsers = newUsers.map(
+      nuevoUsuario =>
+        new User(nuevoUsuario.name, nuevoUsuario.money, showMeTheMoney)
+    );
+    newUsers.forEach(nuevoUsuario => users.push(nuevoUsuario));
+    users[2].showMeTheMoney();
   });
+
+//creamos la funcion showMeTheMoney para que nos lance una alert que nos dira el dinero que tiene roberto.
+function showMeTheMoney() {
+  alert(this.name + " tiene " + this.money + " Eurillos");
+}
+aedaw{}
