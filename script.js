@@ -35,4 +35,3 @@ fetch("./users.json")
 function showMeTheMoney() {
   alert(this.name + " tiene " + this.money + " Eurillos");
 }
-aedaw{}
